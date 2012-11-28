@@ -9,10 +9,18 @@ require 'sinatra'
 #require 'sinatra/synchrony'
 require 'active_record'
 require 'json'
-require 'rack/throttle'
 Bundler.require
 
 require "#{File.dirname(__FILE__)}/database"
 require "#{File.dirname(__FILE__)}/../models/pin"
+
+=begin
+Sinatra::Base.set :environment => ENV['APP_ENV'].to_sym,
+  # :root => File.join(File.dirname(__FILE__), '..'),
+  :raise_errors => true,
+  :dump_errors => true,
+  :static => true,
+  :app_file => File.join(File.dirname(__FILE__), '..', 'pincode.rb')
+=end
 
 

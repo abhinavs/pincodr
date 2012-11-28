@@ -99,6 +99,8 @@ Pincodr exposes following JSON web services
 
   
 
+JSONP support is available on any request via a simple callback query string parameter: ?callback=my\_callback\_name
+
 contact: [abhinav][1] | [homepage][2] | [permalink][3]
 
  [1]: http://twitter.com/abhinav "abhinav"

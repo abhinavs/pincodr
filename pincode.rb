@@ -1,9 +1,13 @@
 $:.<< File.dirname(__FILE__)
 
 require File.join(File.dirname(__FILE__), 'config', 'boot')
+require 'rack/throttle'
+require "sinatra/jsonp"
+# TODO https://github.com/wal/sinatra_api_example-/blob/master/sinatra_api_example.rb
 
 module Pincode
   class Application < Sinatra::Base
+    helpers Sinatra::Jsonp
 
     #register Sinatra::Synchrony
 
@@ -19,7 +23,7 @@ module Pincode
     before { content_type :json }
 
     not_found do
-      {:error => "not found"}.to_json
+      jsonp({:error => "not found"})
     end
 
     helpers do
@@ -27,7 +31,7 @@ module Pincode
         if pins.nil? || pins.empty?
           not_found
         else
-          pins.map(&:attrs).to_json
+          jsonp(pins.map(&:attrs))
         end
       end
     end

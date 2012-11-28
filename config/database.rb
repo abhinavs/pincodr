@@ -1,7 +1,7 @@
 require 'active_record'
 # gem 'sqlite3'
 
-module Pinkode
+module Pincode
   module Database
     def self.start(env)
       puts "Connecting to #{env} database"
@@ -13,4 +13,4 @@ module Pinkode
   end # Database
 end
 
-Pinkode::Database.start(ENV['APP_ENV'])
+Pincode::Database.start(ENV['APP_ENV'])
