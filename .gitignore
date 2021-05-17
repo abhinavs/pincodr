@@ -8,3 +8,4 @@ db/fixtures/pin.psv
 log/*.log
 .redcar
 .redcar/*
+notes.txt

@@ -12,7 +12,7 @@ class String
   end
 end
 
-require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
+require File.expand_path(File.dirname(__FILE__) + "/../config/environment.rb")
 
 unless ARGV.size == 1
   puts "Usage: import_pins.rb <file.psv>"

@@ -1,5 +1,5 @@
-class CreatePins < ActiveRecord::Migration
-  def self.up
+class CreatePins < ActiveRecord::Migration[6.0]
+  def change
     create_table :pins do |t|
       t.string :code, :limit => 7
       t.string :name
@@ -10,12 +10,5 @@ class CreatePins < ActiveRecord::Migration
     [:code, :name, :tehsil, :district].each do |column|
       add_index :pins, column
     end
-  end
-
-  def self.down
-    [:code, :name, :tehsil, :district].each do |column|
-      remove_index :pins, column
-    end
-    drop_table :pins
   end
 end

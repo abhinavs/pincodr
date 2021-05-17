@@ -32,5 +32,4 @@ class Pin < ActiveRecord::Base
     end.all
   end
 
-
 end
