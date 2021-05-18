@@ -1,0 +1,23 @@
+# /usr/lib/systemd/system/pincodr-puma.service
+# sudo systemctl daemon-reload
+[Unit]
+Description=Pincodr - Puma HTTP Server
+After=network.target
+
+[Service]
+SyslogIdentifier=pincodr-puma
+
+# Foreground process (do not use --daemon in ExecStart or config.rb)
+Type=simple
+WorkingDirectory=/home/ubuntu/apps/pincodr/current
+
+# rvmsudo bundle exec rails s -b 0.0.0.0 -p 80 -d -e production
+ExecStart=/usr/share/rvm/gems/ruby-3.0.1/wrappers/bundle exec puma -e production -C /home/ubuntu/apps/pincodr/current/config/puma.rb
+ExecStop=/usr/share/rvm/gems/ruby-3.0.1/wrappers/bundle exec pumactl -F /home/ubuntu/apps/pincodr/current/config/puma.rb stop
+TimeoutSec=15
+KillMode=process
+Restart=always
+EnvironmentFile=/home/ubuntu/apps/pincodr/.pincodr-env
+
+[Install]
+WantedBy=multi-user.target

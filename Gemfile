@@ -9,16 +9,19 @@ gem 'require_all'
 gem 'pg'
 gem 'puma'
 gem 'shotgun'
-gem 'bcrypt'
 gem 'sinatra-jsonp'
 gem "sinatra-cross_origin"
 gem 'rack-contrib'
 gem 'fast_jsonapi'
 gem 'sinatra-contrib', require: false
+gem 'pry'
+gem 'tux'
 
 group :development do
-  gem 'pry'
-  gem 'tux'
+  gem 'capistrano', '~> 3.16', require: false
+  gem 'capistrano3-puma', '~> 5.0.2', require: false
+  gem 'capistrano-rvm', '~> 0.1.2', require: false
+  gem 'capistrano-bundler', '~> 2.0.1', require: false
 end
 
 group :test do
