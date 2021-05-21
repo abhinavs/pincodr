@@ -6,7 +6,7 @@ Pincodr exposes following JSON web services
 
 ### GET /pin/:pin - search by pincode
     
-        GET http://pincodr.abhinav.co/pin/462001
+        GET http://pincodr.apiclabs.com/pin/462001
         
         [{
           "code": "462004",
@@ -26,7 +26,7 @@ Pincodr exposes following JSON web services
 
 ### GET /area/:area - search by area
     
-        GET http://pincodr.abhinav.co/area/pilani
+        GET http://pincodr.apiclabs.com/area/pilani
         
         [{
           "code": "333031",
@@ -39,7 +39,7 @@ Pincodr exposes following JSON web services
 
 ### GET /tehsil/:tehsil & GET /taluk/:taluk - search by tehsil/taluk
     
-        GET http://pincodr.abhinav.co/tehsil/narsinghgarh
+        GET http://pincodr.apiclabs.com/tehsil/narsinghgarh
         
         [{
           "code": "465669",
@@ -59,7 +59,7 @@ Pincodr exposes following JSON web services
 
 ### GET /district/:district - search by district
     
-        GET http://pincodr.abhinav.co/district/vidisha
+        GET http://pincodr.apiclabs.com/district/vidisha
         
         [{
           "code": "464228",
@@ -79,7 +79,7 @@ Pincodr exposes following JSON web services
 
 ### GET /search/:value - code or name starts with value 
     
-        GET http://pincodr.abhinav.co/search/1220
+        GET http://pincodr.apiclabs.com/search/1220
         
         [{
           "code": "122004",
@@ -105,7 +105,7 @@ contact: [abhinav][1] | [homepage][2] | [permalink][3]
 
  [1]: http://twitter.com/abhinav "abhinav"
  [2]: http://abhinav.co "homepage"
- [3]: http://pincodr.abhinav.co "Permalink to pincodr - web service for Indian pincodes"
+ [3]: http://pincodr.apiclabs.com "Permalink to pincodr - web service for Indian pincodes"
 
 ## Copyright
 
