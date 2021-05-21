@@ -13,7 +13,11 @@ sinatra_env = ENV.fetch("SINATRA_ENV") { "development" }
 environment sinatra_env
 
 
-app_dir = '/home/ubuntu/apps/pincodr/current'
+app_dir = File.expand_path("..", __FILE__)
+if %w[production staging].member?(sinatra_env)
+    app_dir = File.expand_path("../..", __FILE__)
+end
+
 directory app_dir
 rackup "#{app_dir}/config.ru"
 
